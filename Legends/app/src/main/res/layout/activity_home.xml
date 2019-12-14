@@ -1,113 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorLightGrey"
-    tools:context=".authentication.LoginActivity">
+    android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="315dp"
-        android:layout_height="351dp"
-        app:cardBackgroundColor="@color/colorGrey"
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="362dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="369dp"
+        android:background="@color/colorDarkGrey"
+        app:cardCornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_image"
-        app:cardCornerRadius="30dp"
-        app:layout_constraintVertical_bias="0.5">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/et_email"
-            android:layout_width="275dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="11dp"
-            android:background="@drawable/input_form"
-            android:ems="10"
-            android:hint="@string/email"
-            android:inputType="textPostalAddress"
-            android:paddingStart="10dp"
-            tools:ignore="RtlSymmetry,TextFields"
-            android:importantForAutofill="no"/>
-
-        <EditText
-            android:id="@+id/et_password"
-            android:layout_width="275dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="160dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="11dp"
-            android:background="@drawable/input_form"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:paddingStart="10dp"
-            android:text=""
-            tools:ignore="RtlSymmetry"
-            android:importantForAutofill="no"/>
-
-        <TextView
-            style="@style/TextTheme"
-            android:layout_width="fill_parent"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:text="@string/welcome"
-            android:textSize="18sp"/>
-
-        <TextView
-            style="@style/TextTheme"
-            android:layout_width="fill_parent"
-            android:layout_marginTop="45dp"
-            android:gravity="center"
-            android:text="@string/sign_into_your_account"/>
 
         <Button
-            android:id="@+id/btn_login"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="80dp"
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
             android:gravity="center"
-            android:layout_marginTop="230dp"
             android:background="@drawable/button"
-            android:text="@string/sign_in"
-            android:textColor="@drawable/button_text_color"/>
+            android:text="Sala de forta"
+            android:textColor="@drawable/button_text_color"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
 
-        <TextView
-            android:id="@+id/tv_signup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="280dp"
-            android:layout_marginBottom="11dp"
-            android:layout_marginLeft="120dp"
-            android:layout_marginRight="120dp"
+        <Button
+            android:id="@+id/button"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="270dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
             android:gravity="center"
-            android:text="@string/login_signup_label"
-            android:textColor="@drawable/textview_color"
-            android:textSize="14sp"/>
-
+            android:background="@drawable/button"
+            android:text="Camin"
+            android:textColor="@drawable/button_text_color"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
     </androidx.cardview.widget.CardView>
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
-        android:src="@drawable/logo"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:layout_constraintHorizontal_bias="0.5"/>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

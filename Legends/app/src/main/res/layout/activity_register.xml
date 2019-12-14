@@ -133,7 +133,7 @@
         android:id="@+id/profile_image"
         android:layout_width="115dp"
         android:layout_height="115dp"
-        android:src="@drawable/logo"
+        android:src="@mipmap/ic_launcher"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

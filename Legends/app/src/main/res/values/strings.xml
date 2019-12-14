@@ -58,4 +58,6 @@
     <string name="coordinates">Coordinates</string>
     <string name="current_marker_address">Current Marker Address</string>
     <string name="done">Done</string>
+    <string name="sala">Sala de forta</string>
+    <string name="camin">Camin</string>
 </resources>
