@@ -21,6 +21,12 @@
         app:cardCornerRadius="30dp"
         app:layout_constraintVertical_bias="0.5">
 
+        <ImageView
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+
         <EditText
             android:id="@+id/et_email"
             android:layout_width="275dp"
