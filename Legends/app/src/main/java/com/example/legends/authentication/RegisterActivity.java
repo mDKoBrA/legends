@@ -1,108 +1,80 @@
 package com.example.legends.authentication;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.legends.R;
-import com.example.legends.firebase.AuthDataCallback;
-import com.example.legends.firebase.AuthRepository;
-import com.example.legends.homemap.HomeMapActivity;
-import com.example.legends.validation.AuthValidation;
-import com.google.legends.gms.tasks.Task;
-import com.google.legends.auth.AuthResult;
-import com.google.legends.auth.FirebaseAuth;
 
-import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText userPassword;
+    private EditText password;
     private EditText confirmPassword;
-    private EditText userEmail;
+    private EditText email;
+    private Button register;
 
-    private AuthRepository authRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        authRepository = new AuthRepository(FirebaseAuth.getInstance());
-
-        userPassword = findViewById(R.id.et_password);
+        password = findViewById(R.id.et_password);
         confirmPassword = findViewById(R.id.et_confirm_password);
-        userEmail = findViewById(R.id.et_email);
-        final Button buttonRegistration = findViewById(R.id.btn_register);
-        TextView signIn = findViewById(R.id.tv_signin);
+        email = findViewById(R.id.et_email);
+        register = findViewById(R.id.btn_register);
 
-        buttonRegistration.setOnClickListener(new View.OnClickListener() {
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createUser();
-            }
-        });
-
-        signIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent m = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(m);
+                checkDataEntered();
             }
         });
     }
 
-    private void createUser() {
+    boolean isEmail(EditText text) {
+        CharSequence email = text.getText().toString();
+        return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
+    }
 
-        String email = userEmail.getText().toString().trim();
-        String password = userPassword.getText().toString().trim();
+    boolean isEmpty(EditText text) {
+        CharSequence str = text.getText().toString();
+        return TextUtils.isEmpty(str);
+    }
 
-        if ((AuthValidation.isEmpty(userEmail)) & (AuthValidation.isEmpty(userPassword))) {
-            Toast em_pass = Toast.makeText(this, "You must complete the spaces!", Toast.LENGTH_SHORT);
-            em_pass.show();
-        } else if (AuthValidation.isEmpty(userEmail)) {
-            Toast mail = Toast.makeText(this, "You must enter email to register!", Toast.LENGTH_SHORT);
-            mail.show();
-        } else if (AuthValidation.isEmpty(userPassword)) {
-            Toast pas = Toast.makeText(this, "You must enter password to register!", Toast.LENGTH_SHORT);
-            pas.show();
-        } else if (AuthValidation.isEmpty(confirmPassword)) {
-            Toast cpass = Toast.makeText(this, "You must confirm your password!", Toast.LENGTH_SHORT);
-            cpass.show();
+    public static boolean isValidPassword(String password) {
+        Matcher matcher = Pattern.compile("((?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{6,20})").matcher(password);
+        return matcher.matches();
+    }
+
+    void checkDataEntered() {
+        if (isEmpty(password)) {
+            Toast t = Toast.makeText(this, "You must enter password to register!", Toast.LENGTH_SHORT);
+            t.show();
+        }
+        if (isEmpty(confirmPassword)) {
+            confirmPassword.setError("Enter your confirmation password");
+
+            if (!password.equals(confirmPassword)) {
+                Toast.makeText(RegisterActivity.this, "Password do not match", Toast.LENGTH_SHORT).show();
+            }
         }
 
-        if (AuthValidation.isEmail(userEmail)) {
-            userEmail.setError("Enter valid email");
+        if (!isEmail(email)) {
+            email.setError("Enter valid email!");
+        } else if (!isValidPassword(password.getText().toString())) {
+            password.setError("Password must contain mix of upper and lower case letters as well as digits and one special charecter(6-20)");
         }
-        if (!AuthValidation.isValidPassword(userPassword.getText().toString())) {
-            userPassword.setError("Password must contain mix of upper and lower case letters as well as digits and one special charecter(6-20)");
-        }
-        if (!AuthValidation.isValidConfirmPassword(userPassword.getText().toString(), confirmPassword.getText().toString())) {
-            confirmPassword.setError("Password do not match");
-            return;
-        }
-        if (!email.isEmpty() && !password.isEmpty()) {
-            authRepository.signUp(this, email, password, new AuthDataCallback<Task<AuthResult>>() {
-                @Override
-                public void onSuccess(Task<AuthResult> response) {
-                    Toast.makeText(RegisterActivity.this, "Sign Up Successfully", Toast.LENGTH_SHORT).show();
-                    authRepository.onAuthSuccess(Objects.requireNonNull(Objects.requireNonNull(response.getResult()).getUser()));
-                    startActivity(new Intent(RegisterActivity.this, HomeMapActivity.class));
-                    finish();
-                }
 
-                @Override
-                public void onError() {
-                    Toast.makeText(RegisterActivity.this, "Sign Up Failed, Try Again!", Toast.LENGTH_SHORT).show();
-                    userEmail.setError("Email already exists");
-                }
-            });
-        }
     }
 }

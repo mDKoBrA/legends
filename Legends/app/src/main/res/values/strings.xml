@@ -1,6 +1,4 @@
 <resources>
-
-=======
     <string name="app_name">TA-IR</string>
     <string name="logo">Logo</string>
     <string name="login_signup_label">
@@ -60,5 +58,6 @@
     <string name="coordinates">Coordinates</string>
     <string name="current_marker_address">Current Marker Address</string>
     <string name="done">Done</string>
->>>>>>> 09d246e80c3ce686f22d977441d88fee2a56427d
+    <string name="sala">Sala de forta</string>
+    <string name="camin">Camin</string>
 </resources>
