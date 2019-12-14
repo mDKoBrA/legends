@@ -1,15 +1,18 @@
 package com.example.legends.authentication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.legends.MainActivity;
 import com.example.legends.R;
 
 import java.util.regex.Matcher;
@@ -22,6 +25,8 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText confirmPassword;
     private EditText email;
     private Button register;
+    private TextView tv_signin;
+
 
 
     @Override
@@ -33,11 +38,20 @@ public class RegisterActivity extends AppCompatActivity {
         confirmPassword = findViewById(R.id.et_confirm_password);
         email = findViewById(R.id.et_email);
         register = findViewById(R.id.btn_register);
+        tv_signin = findViewById(R.id.tv_signin);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 checkDataEntered();
+            }
+        });
+
+        tv_signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent j = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(j);
             }
         });
     }
