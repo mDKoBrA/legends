@@ -10,7 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.example.legends.authentication.LoginActivity;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.Objects;
 
@@ -55,8 +57,8 @@ public abstract class NavigationDrawer extends AppCompatActivity {
                         startActivity(list);
                         break;
                     case R.id.logout:
-                        startActivity(new Intent(NavigationDrawer.this, LoginActivity.class));
-                        finish();
+                        Intent logout = new Intent(getApplicationContext(), LoginActivity.class);
+                        startActivity(logout);
                         break;
                     default:
                         return true;
