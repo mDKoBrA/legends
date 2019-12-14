@@ -1,4 +1,4 @@
-package com.example.legends.authentication;
+package com.example.legends;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.legends.MainActivity;
+import com.example.legends.ProgramActivity;
 import com.example.legends.R;
 
 import java.util.regex.Matcher;
@@ -46,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent j = new Intent(getApplicationContext(), MainActivity.class);
+                Intent j = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(j);
             }
         });
