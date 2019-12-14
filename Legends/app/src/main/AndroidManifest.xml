@@ -30,6 +30,13 @@
             android:theme="@style/AppThemeNoBar"
             android:noHistory="true"
             android:exported="true" />
+
+        <activity
+            android:name=".authentication.ProgramActivity"
+            android:exported="true"
+            android:noHistory="true"
+            android:theme="@style/AppThemeNoBar"
+            />
     </application>
 
 

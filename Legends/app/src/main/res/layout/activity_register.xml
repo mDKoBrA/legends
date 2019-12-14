@@ -11,7 +11,7 @@
         android:id="@+id/cardView"
         android:layout_width="315dp"
         android:layout_height="391dp"
-        app:cardBackgroundColor="@color/colorGrey"
+        app:cardBackgroundColor="@color/colorDarkGrey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

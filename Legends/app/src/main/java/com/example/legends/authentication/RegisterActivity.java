@@ -6,6 +6,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +34,8 @@ public class RegisterActivity extends AppCompatActivity {
         confirmPassword = findViewById(R.id.et_confirm_password);
         email = findViewById(R.id.et_email);
         register = findViewById(R.id.btn_register);
+        TextView signIn = findViewById(R.id.tv_signin);
+
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
