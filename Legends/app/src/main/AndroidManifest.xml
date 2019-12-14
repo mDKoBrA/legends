@@ -20,6 +20,17 @@
             android:name=".intro.Slider"
             android:noHistory="true"
             android:theme="@style/AppThemeNoBar" />
+        <activity
+            android:name=".authentication.LoginActivity"
+            android:exported="true"
+            android:noHistory="true"
+            android:theme="@style/AppThemeNoBar" />
+        <activity
+            android:name=".authentication.RegisterActivity"
+            android:theme="@style/AppThemeNoBar"
+            android:noHistory="true"
+            android:exported="true" />
     </application>
+
 
 </manifest>
