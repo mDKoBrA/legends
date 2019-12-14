@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.legends">
 
+
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:orientation="vertical"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme"
+        tools:ignore="ExtraText,GoogleAppIndexingWarning,MissingApplicationIcon">
+
+        <activity
+            android:name=".authentication.RegisterActivity"
+            android:theme="@style/AppThemeNoBar"
+            android:noHistory="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".splash.Splash"
+            android:noHistory="true"
+            android:theme="@style/AppThemeNoBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,24 +32,13 @@
             android:name=".intro.Slider"
             android:noHistory="true"
             android:theme="@style/AppThemeNoBar" />
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".authentication.LoginActivity"
             android:exported="true"
             android:noHistory="true"
             android:theme="@style/AppThemeNoBar" />
-        <activity
-            android:name=".authentication.RegisterActivity"
-            android:theme="@style/AppThemeNoBar"
-            android:noHistory="true"
-            android:exported="true" />
 
-        <activity
-            android:name=".authentication.ProgramActivity"
-            android:exported="true"
-            android:noHistory="true"
-            android:theme="@style/AppThemeNoBar"
-            />
     </application>
-
 
 </manifest>
