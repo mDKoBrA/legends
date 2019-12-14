@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.legends.MainActivity;
+import com.example.legends.ProgramActivity;
 import com.example.legends.R;
 
 import java.util.regex.Matcher;

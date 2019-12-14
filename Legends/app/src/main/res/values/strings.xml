@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Programari UTM</string>
+    <string name="app_name">UTM Programari</string>
     <string name="logo">Logo</string>
     <string name="login_signup_label">
         <u>or Sign Up</u>
