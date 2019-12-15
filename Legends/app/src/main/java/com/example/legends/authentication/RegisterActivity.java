@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.legends.MainActivity;
+import com.example.legends.HomeActivity;
 import com.example.legends.R;
 
 import java.util.regex.Matcher;
@@ -24,9 +24,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText password;
     private EditText confirmPassword;
     private EditText email;
-    private Button register;
-    private TextView tv_signin;
-
 
 
     @Override
@@ -37,8 +34,8 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.et_password);
         confirmPassword = findViewById(R.id.et_confirm_password);
         email = findViewById(R.id.et_email);
-        register = findViewById(R.id.btn_register);
-        tv_signin = findViewById(R.id.tv_signin);
+        Button register = findViewById(R.id.btn_register);
+        TextView tv_signin = findViewById(R.id.tv_signin);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,23 +68,38 @@ public class RegisterActivity extends AppCompatActivity {
         return matcher.matches();
     }
 
-    void checkDataEntered() {
-        if (isEmpty(password)) {
-            Toast t = Toast.makeText(this, "You must enter password to register!", Toast.LENGTH_SHORT);
-            t.show();
-        }
-        if (isEmpty(confirmPassword)) {
-            confirmPassword.setError("Enter your confirmation password");
 
-            if (!password.equals(confirmPassword)) {
-                Toast.makeText(RegisterActivity.this, "Password do not match", Toast.LENGTH_SHORT).show();
-            }
+    void checkDataEntered() {
+        if ((isEmpty(email)) & (isEmpty(password))) {
+            Toast mail = Toast.makeText(this, "You must complete the spaces!", Toast.LENGTH_SHORT);
+            mail.show();
+        } else if (isEmpty(email)) {
+            Toast mail = Toast.makeText(this, "You must enter email to register!", Toast.LENGTH_SHORT);
+            mail.show();
+        } else if (isEmpty(password)) {
+            Toast pas = Toast.makeText(this, "You must enter password to register!", Toast.LENGTH_SHORT);
+            pas.show();
+        } else if (isEmpty(confirmPassword)) {
+            Toast confpas = Toast.makeText(this, "You must enter confirm password to register!", Toast.LENGTH_SHORT);
+            confpas.show();
         }
 
         if (!isEmail(email)) {
             email.setError("Enter valid email!");
-        } else if (!isValidPassword(password.getText().toString())) {
-            password.setError("Password must contain mix of upper and lower case letters as well as digits and one special charecter(6-20)");
+        }
+
+        if (!isValidPassword(password.getText().toString())) {
+            password.setError("Password must contain mix of upper and lower case letters as well as digits and one special charecter(4-20)");
+        }
+//        if (!password.equals(confirmPassword)) {
+//            Toast.makeText(RegisterActivity.this, "Password do not match", Toast.LENGTH_SHORT).show();
+//        }
+        if(!password.equals(confirmPassword)){
+            Toast.makeText(RegisterActivity.this,"Password Not matching",Toast.LENGTH_SHORT).show();}
+
+        if ((isEmail(email)) & (isValidPassword(password.getText().toString())) & (password.equals(confirmPassword))) {
+            Intent i = new Intent(getApplicationContext(), HomeActivity.class);
+            startActivity(i);
         }
 
     }

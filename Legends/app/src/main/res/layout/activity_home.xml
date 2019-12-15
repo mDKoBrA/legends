@@ -4,53 +4,115 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorLightGrey"
+    tools:context=".authentication.LoginActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/profile_image"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.5"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
         android:layout_height="450dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="362dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="369dp"
-        app:cardBackgroundColor="@color/colorDarkGrey"
-        app:cardCornerRadius="30dp"
+        android:id="@+id/cardView"
+        app:cardBackgroundColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/profile_image"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintVertical_bias="0.5">
 
-        <ImageView
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"/>
-
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:gravity="center"
-            android:background="@drawable/button"
-            android:text="Sala de forta"
-            android:textColor="@drawable/button_text_color"
-            android:textSize="16sp"
-            tools:ignore="HardcodedText" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:layout_marginTop="270dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="100dp"
             android:gravity="center"
             android:background="@drawable/button"
-            android:text="Camin"
+            android:text="@string/sala"
+            android:textColor="@drawable/button_text_color"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="340dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="100dp"
+            android:gravity="center"
+            android:background="@drawable/button"
+            android:text="Concursuri"
+            android:textColor="@drawable/button_text_color"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="180dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:background="@drawable/button"
+            android:text="@string/cazare_camin"
+            android:textColor="@drawable/button_text_color"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="340dp"
+            android:layout_marginLeft="180dp"
+            android:layout_marginRight="100dp"
+            android:gravity="center"
+            android:background="@drawable/button"
+            android:text="Altele"
+            android:textColor="@drawable/button_text_color"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="100dp"
+            android:gravity="center"
+            android:background="@drawable/button"
+            android:text="@string/activitati_extracuriculare"
+            android:textColor="@drawable/button_text_color"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="180dp"
+            android:layout_marginRight="100dp"
+            android:gravity="center"
+            android:background="@drawable/button"
+            android:text="@string/mail_box"
             android:textColor="@drawable/button_text_color"
             android:textSize="16sp"
             tools:ignore="HardcodedText" />

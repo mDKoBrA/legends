@@ -41,20 +41,24 @@ public abstract class NavigationDrawer extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.home:
-                        Intent home = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent home = new Intent(getApplicationContext(), HomeActivity.class);
                         startActivity(home);
                         break;
-                    case R.id.account:
-                        Intent account = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(account);
+                    case R.id.cazare_camin:
+                        Intent cazare_camin = new Intent(getApplicationContext(), CaminActivity.class);
+                        startActivity(cazare_camin);
                         break;
-                    case R.id.incident:
-                        Intent incident = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(incident);
+                    case R.id.sala_forta:
+                        Intent sala_forta = new Intent(getApplicationContext(), FitnesActivity.class);
+                        startActivity(sala_forta);
                         break;
-                    case R.id.view_list:
-                        Intent list = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(list);
+                    case R.id.activitati_extracuriculare:
+                        Intent activitati_extracuriculare = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(activitati_extracuriculare);
+                        break;
+                    case R.id.mail_box:
+                        Intent mail_box = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(mail_box);
                         break;
                     case R.id.logout:
                         Intent logout = new Intent(getApplicationContext(), LoginActivity.class);

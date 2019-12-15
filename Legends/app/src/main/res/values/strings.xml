@@ -60,4 +60,10 @@
     <string name="done">Done</string>
     <string name="sala">Sala de forta</string>
     <string name="camin">Camin</string>
+    <string name="select_date">SELECT DATE</string>
+    <string name="select_time">SELECT TIME</string>
+    <string name="cazare_camin">Cazare Camin</string>
+    <string name="sala_forta">Sala Forta</string>
+    <string name="activitati_extracuriculare">Activitati Extracuriculare</string>
+    <string name="mail_box">Mail Box</string>
 </resources>

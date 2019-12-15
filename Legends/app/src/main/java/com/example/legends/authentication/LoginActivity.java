@@ -12,8 +12,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.legends.MainActivity;
-import com.example.legends.ProgramActivity;
+import com.example.legends.HomeActivity;
 import com.example.legends.R;
 
 import java.util.regex.Matcher;
@@ -88,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
             password.setError("Password must contain mix of upper and lower case letters as well as digits and one special charecter(4-20)");
         }
         if ((isEmail(e_mail)) & (isValidPassword(password.getText().toString()))) {
-            Intent i = new Intent(getApplicationContext(), ProgramActivity.class);
+            Intent i = new Intent(getApplicationContext(), HomeActivity.class);
             startActivity(i);
         }
 

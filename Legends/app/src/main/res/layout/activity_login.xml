@@ -13,19 +13,13 @@
         android:id="@+id/cardView"
         android:layout_width="315dp"
         android:layout_height="351dp"
-        app:cardBackgroundColor="@color/colorDarkGrey"
+        app:cardBackgroundColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_image"
         app:cardCornerRadius="30dp"
         app:layout_constraintVertical_bias="0.5">
-
-        <ImageView
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"/>
 
         <EditText
             android:id="@+id/et_email"

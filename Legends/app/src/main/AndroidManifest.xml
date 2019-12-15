@@ -48,6 +48,12 @@
             android:noHistory="true"
             android:theme="@style/AppThemeNoBar"
             />
+        <activity android:name=".HomeActivity"
+            android:exported="true"/>
+        <activity android:name=".CaminActivity"
+            android:exported="true"/>
+        <activity android:name=".FitnesActivity"
+            android:exported="true"/>
     </application>
 
 

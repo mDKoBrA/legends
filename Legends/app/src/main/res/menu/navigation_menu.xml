@@ -3,12 +3,14 @@
 
     <item android:id="@+id/home"
         android:title="@string/home"/>
-    <item android:id="@+id/account"
-        android:title="@string/my_account"/>
-    <item android:id="@+id/incident"
-        android:title="@string/add_incident"/>
-    <item android:id="@+id/view_list"
-        android:title="@string/view_list_incident"/>
+    <item android:id="@+id/cazare_camin"
+        android:title="@string/cazare_camin"/>
+    <item android:id="@+id/sala_forta"
+        android:title="@string/sala_forta"/>
+    <item android:id="@+id/activitati_extracuriculare"
+        android:title="@string/activitati_extracuriculare"/>
+    <item android:id="@+id/mail_box"
+        android:title="@string/mail_box"/>
     <item android:id="@+id/logout"
         android:title="@string/log_out"/>
 
