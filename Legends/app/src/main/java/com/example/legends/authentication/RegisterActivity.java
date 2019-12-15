@@ -91,13 +91,8 @@ public class RegisterActivity extends AppCompatActivity {
         if (!isValidPassword(password.getText().toString())) {
             password.setError("Password must contain mix of upper and lower case letters as well as digits and one special charecter(4-20)");
         }
-//        if (!password.equals(confirmPassword)) {
-//            Toast.makeText(RegisterActivity.this, "Password do not match", Toast.LENGTH_SHORT).show();
-//        }
-        if(!password.equals(confirmPassword)){
-            Toast.makeText(RegisterActivity.this,"Password Not matching",Toast.LENGTH_SHORT).show();}
 
-        if ((isEmail(email)) & (isValidPassword(password.getText().toString())) & (password.equals(confirmPassword))) {
+        if ((isEmail(email)) & (isValidPassword(password.getText().toString()))) {
             Intent i = new Intent(getApplicationContext(), HomeActivity.class);
             startActivity(i);
         }
